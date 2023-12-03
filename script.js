@@ -1,17 +1,13 @@
-function validateForm() {
-  var username = document.getElementById("username").value;
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirmPassword").value;
+function signup() {
+  const username = document.getElementById("signupUsername").value;
+  const password = document.getElementById("signupPassword").value;
 
-  if (!username || !email || !password || !confirmPassword) {
-    alert("Please fill in all fields.");
-    return;
-  }
+  alert(`Sign up successful!\nUsername: ${username}\nPassword: ${password}`);
+}
 
-  if (password !== confirmPassword) {
-    alert("Password and Confirm Password do not match.");
-    return;
-  }
-  alert("Form submitted successfully!");
+function login() {
+  const username = document.getElementById("loginUsername").value;
+  const password = document.getElementById("loginPassword").value;
+
+  alert(`Login successful!\nUsername: ${username}\nPassword: ${password}`);
 }
