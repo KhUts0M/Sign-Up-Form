@@ -1,13 +1,10 @@
-function signup() {
-  const username = document.getElementById("signupUsername").value;
-  const password = document.getElementById("signupPassword").value;
+const switchers = [...document.querySelectorAll(".switcher")];
 
-  alert(`Sign up successful!\nUsername: ${username}\nPassword: ${password}`);
-}
-
-function login() {
-  const username = document.getElementById("loginUsername").value;
-  const password = document.getElementById("loginPassword").value;
-
-  alert(`Login successful!\nUsername: ${username}\nPassword: ${password}`);
-}
+switchers.forEach((item) => {
+  item.addEventListener("click", function () {
+    switchers.forEach((item) =>
+      item.parentElement.classList.remove("is-active")
+    );
+    this.parentElement.classList.add("is-active");
+  });
+});
