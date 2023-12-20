@@ -10,14 +10,23 @@ switchers.forEach((item) => {
   });
 });
 
+// Function to switch to login and clear form inputs
+function switchToLogin() {
+  document.querySelector(".switcher-signup").classList.remove("is-active");
+  document.querySelector(".form-signup").classList.remove("is-active");
+  document.querySelector(".switcher-login").classList.add("is-active");
+  document.querySelector(".form-login").classList.add("is-active");
+
+  // Clear form inputs
+  document.getElementById("signup-email").value = "";
+  document.getElementById("signup-password").value = "";
+  document.getElementById("signup-password-confirm").value = "";
+}
+
 // Function to switch to signup and clear form inputs
 function switchToSignup() {
-  console.log("Switching to signup");
-  // Remove "is-active" class from login switcher and form
   document.querySelector(".switcher-login").classList.remove("is-active");
   document.querySelector(".form-login").classList.remove("is-active");
-
-  // Add "is-active" class to signup switcher and form
   document.querySelector(".switcher-signup").classList.add("is-active");
   document.querySelector(".form-signup").classList.add("is-active");
 
@@ -26,19 +35,26 @@ function switchToSignup() {
   document.getElementById("login-password").value = "";
 }
 
-// Function to switch to login and clear form inputs
-function switchToLogin() {
-  console.log("Switching to login");
-  // Remove "is-active" class from signup switcher and form
-  document.querySelector(".switcher-signup").classList.remove("is-active");
-  document.querySelector(".form-signup").classList.remove("is-active");
-
-  // Add "is-active" class to login switcher and form
-  document.querySelector(".switcher-login").classList.add("is-active");
-  document.querySelector(".form-login").classList.add("is-active");
+// Function to handle login form submission
+function handleLoginSubmit(form) {
+  // Your login form handling logic here
+  // ...
 
   // Clear form inputs
-  document.getElementById("signup-email").value = "";
-  document.getElementById("signup-password").value = "";
-  document.getElementById("signup-password-confirm").value = "";
+  form.reset();
+
+  // Prevent the default form submission
+  return false;
+}
+
+// Function to handle signup form submission
+function handleSignupSubmit(form) {
+  // Your signup form handling logic here
+  // ...
+
+  // Clear form inputs
+  form.reset();
+
+  // Prevent the default form submission
+  return false;
 }

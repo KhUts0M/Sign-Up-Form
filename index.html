@@ -24,9 +24,16 @@
             Login
             <span class="underline"></span>
           </button>
-          <form class="form form-login">
+          <form
+            class="form form-login"
+            onsubmit="return handleLoginSubmit(this);"
+          >
             <fieldset>
               <legend>Please, enter your email and password for login.</legend>
+              <div class="input-block">
+                <label for="login-name">Name</label>
+                <input id="login-name" type="name" required />
+              </div>
               <div class="input-block">
                 <label for="login-email">E-mail</label>
                 <input id="login-email" type="email" required />
@@ -51,12 +58,23 @@
             Sign Up
             <span class="underline"></span>
           </button>
-          <form class="form form-signup">
+          <form
+            class="form form-signup"
+            onsubmit="return handleSignupSubmit(this);"
+          >
             <fieldset>
               <legend>
-                Please, enter your email, password and password confirmation for
-                sign up.
+                Please, enter your email, password, and password confirmation
+                for sign up.
               </legend>
+              <div class="input-block">
+                <label for="signup-name">First Name(s)</label>
+                <input id="signup-name" type="name" required />
+              </div>
+              <div class="input-block">
+                <label for="signup-last-name">Last Name</label>
+                <input id="signup-last-name" type="last-name" required />
+              </div>
               <div class="input-block">
                 <label for="signup-email">E-mail</label>
                 <input id="signup-email" type="email" required />
